@@ -8,13 +8,7 @@ public class Main {
 
         int choice=-1;
        while (choice!=0) {
-           System.out.println("""
-                   1.Create account
-                   2.Deposit
-                   3.Withdraw
-                   4.Run special action
-                   5.Show account info
-                   0.Exit""");
+           showMenu(scanner);
            System.out.print("Enter your choice: ");
            try {
                choice = scanner.nextInt();
@@ -24,9 +18,10 @@ public class Main {
                scanner.nextLine();
                choice = -1;
            }
-
            switch (choice) {
-               case 0 -> System.out.println("Exiting... Goodbye!");
+               case 0 -> {
+                   System.out.println("Exiting... Goodbye!");
+               }
                case 1 -> {createAccount(scanner, accounts); }
 
                case 2 ->{
@@ -52,6 +47,7 @@ public class Main {
                        System.out.println(account);
                    }
                }
+
                default -> System.out.println("Invalid choice");
 
            }
@@ -141,11 +137,11 @@ public class Main {
         }
         else {
             try {
-                System.out.print("How much you want to deposit: ");
+                System.out.print("How much you want to withdraw: ");
                 double amount = scanner.nextDouble();
                 scanner.nextLine();
                 acc.deposit(amount);
-                System.out.println("Successfully deposited");
+                System.out.println("Successfully withdrawn");
             } catch (Exception e) {
                 System.out.println("Invalid input. Please try again.");
                 scanner.nextLine();
@@ -175,6 +171,16 @@ public class Main {
                 }
             }
         }
+    }
+    public static void showMenu(Scanner scanner){
+        System.out.println("""
+                   1.Create account
+                   2.Deposit
+                   3.Withdraw
+                   4.Run special action
+                   5.Show account info
+                   0.Exit""");
+
     }
 
 
