@@ -89,7 +89,7 @@ public class Main {
             System.out.println("""
                     1.Loan Account
                     2.Deposit Account
-                    3.Mortage Account """);
+                    3.Mortage Account""");
             System.out.print("Enter account type: ");
             int type = scanner.nextInt();
             scanner.nextLine();
@@ -125,7 +125,7 @@ public class Main {
             try {
                 System.out.print("How much you want to deposit: ");
                 double amount = scanner.nextDouble();
-                scanner.nextLine(); // Clear buffer
+                scanner.nextLine();
                 acc.deposit(amount);
                 System.out.println("Successfully deposited");
             } catch (Exception e) {
@@ -143,7 +143,7 @@ public class Main {
             try {
                 System.out.print("How much you want to deposit: ");
                 double amount = scanner.nextDouble();
-                scanner.nextLine(); // Clear buffer
+                scanner.nextLine();
                 acc.deposit(amount);
                 System.out.println("Successfully deposited");
             } catch (Exception e) {
